@@ -1,0 +1,21 @@
+<div class="card results">
+    <div class="card-header">
+        Check results
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tr>
+                <th>IP</th>
+                <th>Checked At</th>
+                <th>Geo data</th>
+            </tr>
+            {% for ipCheckResult in ipCheckResults %}
+                <tr>
+                    <td>{{ ipCheckResult.ipCheck.ip }}</td>
+                    <td>{{ ipCheckResult.checkedAt | date }}</td>
+                    <td>{% include 'default/geo_data_detail.html.twig' with {'geoData': ipCheckResult.geoData} %}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>

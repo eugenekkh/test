@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Add new ip address to check
+                </div>
+                <div class="card-body">
+                    {{ form(form) }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            {% include 'default/ip_check_table.html.twig' %}
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            {% include 'default/ip_check_result_table.html.twig' %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    App\Handler\:
+        resource: '../src/Handler'
+        tags:
+            - { name: tactician.handler, typehints: true }
+
+    App\Provider\GeoDataProviderInterface: '@App\Provider\IpUaProvider'
+
+    App\Repository\IpCheckRepositoryInterface: '@App\Repository\IpCheckRepository'
+    App\Repository\IpCheckResultRepositoryInterface: '@App\Repository\IpCheckResultRepository'

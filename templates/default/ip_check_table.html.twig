@@ -1,0 +1,16 @@
+<div class="card ip-addresses">
+    <div class="card-header">
+        List of ip addresses to check
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tbody>
+                {% for ipCheck in ipChecks %}
+                    <tr>
+                        <td>{{ ipCheck.ip }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
